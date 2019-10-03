@@ -84,4 +84,11 @@ public class MyCreatedef {
     public void iChooseToCloneMyAccount() {
         System.out.println("This method must work for cloning");
     }
+
+    @Given("^That account exists with \\$(\\d+)$")
+    public void thatAccountExistsWith$(int arg0) {
+        System.out.println("Testing $400 account creation");
+        Account[] accTest = Main.createAccount(arg0);
+        System.out.println(accTest[0].getBalance());
+    }
 }

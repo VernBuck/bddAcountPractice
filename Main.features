@@ -18,3 +18,6 @@ Feature: Creating an account and making transactions
     Given That account exists
     When I choose to clone my account
     Then I should have two accounts
+
+  Scenario: This is a code based scenario, it does not reflect customer wants
+    Given That account exists with $400
