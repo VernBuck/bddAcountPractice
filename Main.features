@@ -1,4 +1,7 @@
 Feature: Creating an account and making transactions
+  Background:
+    Given that account exists with hidden money exists
+
   Scenario: I want to create an account with a set amount of money
     Given That I want to create an account
     When I decide on the amount of money I want to place

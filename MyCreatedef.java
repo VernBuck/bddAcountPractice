@@ -2,6 +2,7 @@ package Steps;
 
 import com.company.Account;
 import com.company.Main;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -89,6 +90,13 @@ public class MyCreatedef {
     public void thatAccountExistsWith$(int arg0) {
         System.out.println("Testing $400 account creation");
         Account[] accTest = Main.createAccount(arg0);
+        System.out.println(accTest[0].getBalance());
+    }
+
+    @Given("^that account exists with hidden money exists$")
+    public void thatAccountExistsWithHiddenMoneyExists() {
+        System.out.println("Testing 8 account creation");
+        Account[] accTest = Main.createAccount(8);
         System.out.println(accTest[0].getBalance());
     }
 }
