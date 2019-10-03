@@ -1,0 +1,20 @@
+Feature: Creating an account and making transactions
+  Scenario: I want to create an account with a set amount of money
+    Given That I want to create an account
+    When I decide on the amount of money I want to place
+    Then The account I created should have the set amount of money
+
+  Scenario: I want to add money to a created account
+    Given That account exists
+    When I choose to add money
+    Then My account's value is increased by that amount
+
+  Scenario: I want to remove money from a created account
+    Given That account exists
+    When I choose to remove money
+    Then My account's value is decreased by that amount
+
+  Scenario: I want to clone an existing account with more than 2 dollars
+    Given That account exists
+    When I choose to clone my account
+    Then I should have two accounts
