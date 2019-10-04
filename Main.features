@@ -25,11 +25,27 @@ Feature: Creating an account and making transactions
   Scenario: This is a code based scenario, it does not reflect customer wants
     Given That account exists with $400
 
-    #not working
  Scenario Outline:
-  Given My account's <balance>
+  Given I want to create an account with "<balance>"
    Examples:
     | balance |
-    | $500    |
-    | $750    |
-    | $58     |
+    | 500     |
+    | 750     |
+    | 58      |
+
+  Scenario Outline:
+    Given I want to "<test>" an amount to my account via "<option>"
+    When I finish deposit I want to test withdraw
+    Then I want to "<test>" an amount via "<option>"
+
+    Examples: Choosing to deposit
+      | test | option |
+      | 55  | deposit |
+      | 80  | deposit |
+      | 115 | deposit |
+
+    Examples: Choosing to withdraw
+      | test | option |
+      | 30  | withdraw |
+      | 50  | withdraw |
+      | 100 | withdraw |

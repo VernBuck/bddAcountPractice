@@ -100,7 +100,35 @@ public class MyCreatedef {
         System.out.println(accTest[0].getBalance());
     }
 
-    @Given("^My account's <balance>$")
-    public void myAccountSBalance() {
+    @Given("^I want to create an account with \"([^\"]*)\"$")
+    public void iWantToCreateAnAccountWith(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        int arg = Integer.parseInt(arg0);
+        Account[] accTest = Main.createAccount(arg);
+        System.out.println(accTest[0].getBalance());
+    }
+
+
+    @Given("^I want to \"([^\"]*)\" an amount to my account via \"([^\"]*)\"$")
+    public void iWantToAnAmountToMyAccountVia(String arg0, String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        int arg = Integer.parseInt(arg0);
+        Account[] accTest = Main.createAccount(arg);
+        Main.optionsTest(arg1, accTest);
+    }
+
+    @When("^I finish deposit I want to test withdraw$")
+    public void iFinishDepositIWantToTestWithdraw() {
+        System.out.println("Passed");
+    }
+
+    @Then("^I want to \"([^\"]*)\" an amount via \"([^\"]*)\"$")
+    public void iWantToAnAmountVia(String arg0, String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        int arg = Integer.parseInt(arg0);
+        Account[] accTest = Main.createAccount(arg);
+        Main.optionsTest(arg1, accTest);
     }
 }
+
+
