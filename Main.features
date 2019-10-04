@@ -24,3 +24,12 @@ Feature: Creating an account and making transactions
 
   Scenario: This is a code based scenario, it does not reflect customer wants
     Given That account exists with $400
+
+    #not working
+ Scenario Outline:
+  Given My account's <balance>
+   Examples:
+    | balance |
+    | $500    |
+    | $750    |
+    | $58     |

@@ -99,4 +99,8 @@ public class MyCreatedef {
         Account[] accTest = Main.createAccount(8);
         System.out.println(accTest[0].getBalance());
     }
+
+    @Given("^My account's <balance>$")
+    public void myAccountSBalance() {
+    }
 }
